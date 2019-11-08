@@ -1,0 +1,62 @@
+{
+  "name": "delta-encoder",
+  "version": "1.0.0",
+  "description": "Full-stack application for string's delta compression",
+  "main": "functions/index.js",
+  "outDir": "dist",
+  "scripts": {
+    "build": "webpack --mode production",
+    "build:serverless": "netlify-lambda build src/server/functions",
+    "start": "npm run build && node src/server/index.js",
+    "start:serverless": "netlify-lambda serve dist/functions",
+    "client": "cross-env NODE_ENV=development webpack-dev-server --mode development --devtool inline-source-map --hot",
+    "server": "cross-env NODE_ENV=development nodemon --inspect server.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "author": "Tu Tran",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tu-tran/delta-encoder.git"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.6.0",
+    "@material-ui/styles": "^4.6.0",
+    "babel-polyfill": "^6.26.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.16.3",
+    "multer": "^1.4.2",
+    "netlify-lambda": "^1.6.3",
+    "prop-types": "^15.7.2",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "serverless-http": "^2.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.0",
+    "babel-loader": "^8.0.0",
+    "clean-webpack-plugin": "^1.0.0",
+    "concurrently": "^4.0.0",
+    "copy-webpack-plugin": "^5.0.5",
+    "cross-env": "^6.0.3",
+    "css-loader": "^2.0.0",
+    "eslint": "^5.0.0",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "file-loader": "^3.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "nodemon": "^1.17.3",
+    "style-loader": "^0.23.0",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.5.0",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.3"
+  }
+}
